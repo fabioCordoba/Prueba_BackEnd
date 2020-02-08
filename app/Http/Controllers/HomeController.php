@@ -34,7 +34,6 @@ class HomeController extends Controller
         $posters=DB::table('post')
         ->join('users','post.id_user','users.id')
         ->select('post.id','post.id_user','post.comentario','post.fecha','post.foto','users.id as idUser','users.name as nomUser')
-        ->take(10)
         ->get();
         $reversed = $posters->reverse();
         return view('home',compact('reversed'));
@@ -71,6 +70,7 @@ class HomeController extends Controller
                     'fecha'=>$now
                     ]);
                 $res = ['ope'=>'1', 'msg'=>'Post Publicado con exito', 'estado'=>true]; 
+
             }
             DB::commit();
         } catch (\Exception $e) {

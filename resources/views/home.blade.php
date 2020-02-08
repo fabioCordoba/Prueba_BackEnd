@@ -62,19 +62,6 @@
                         </div>
                         <hr>
                     @endforeach
-                    
-                    <!---->
-                    <!--<div class="row">
-                        <div class="col-md-1">
-                            <img style="height: 50px; margin-right: 10px;" src="{{ asset('images/images.jpg') }}" alt="">
-                        </div>
-                        <div class="col-md-10">
-                            <h5>YulY Sanchez</h5><h6>17 min</h6>
-                            <div class="card-body" style="padding-top: 0px;">
-                                <img style="height: 500px;" src="{{ asset('images/pos.jpg') }}" alt="">
-                            </div>
-                        </div>
-                    </div>-->
                 </div>
                 
             </div>

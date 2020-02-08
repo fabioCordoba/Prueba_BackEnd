@@ -19,6 +19,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('publicar', 'HomeController@Publicar')->name('publicar');
+Route::get('enviar',function(){
+    $users = App\User::all();
+    foreach ($users as $user) {
+        Mail::send('emails',['user' => $user],function($m) use ($user){
+            $m->from('Admin@laravel.com','Administrador');
+            $m->to($user->email,$user->name)->subject('Hola '. $user->name . ', Tenemos Novedades.');
+        });
+    }
+    
+})->name('enviar');
 
 
 

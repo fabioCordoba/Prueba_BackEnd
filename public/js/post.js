@@ -27,7 +27,15 @@ function publicar(){
         processData: false,
         success: function (res) {
             console.log(res);
-            location.reload();
+            if(res.ope == 0){
+                $.ajax({
+                    url: "enviar",
+                    context: document.body
+                  }).done(function() {
+                    location.reload();
+                  });
+            }
+            //location.reload();
             
         },
         error: function(error){
